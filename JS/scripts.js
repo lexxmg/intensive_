@@ -10,29 +10,24 @@ house.addEventListener('mouseover', (event) => {
   tool.className = 'tooltip';
   tool.innerHTML = target.dataset.tooltip;
 
-  let top = target.getBoundingClientRect().top;
-  let bottom = target.getBoundingClientRect().bottom;
-  let left = target.getBoundingClientRect().left;
-  let width = target.getBoundingClientRect().width;
+  let coords = target.getBoundingClientRect();
 
   house.append(tool);
 
-  let toolWidth = tool.offsetWidth;
-  let toolHheight = tool.offsetHeight;
-  let toolTop = top - toolHheight;
+  let toolTop = coords.top - tool.offsetHeight;
 
   if (toolTop < 0) {
-    tool.style.top = (bottom + 3) + 'px';
+    tool.style.top = (coords.bottom + 3) + 'px';
   } else {
-    tool.style.top = (top - toolHheight - 3) + 'px';
+    tool.style.top = (coords.top - tool.offsetHeight - 3) + 'px';
   }
 
-  tool.style.left = (left + width - toolWidth) / 2  + 'px';
+  tool.style.left = (coords.left + coords.width - tool.offsetWidth) / 2  + 'px';
 
-  console.log(top);
-  console.log(left);
-  console.log(width);
-  console.log(toolWidth);
+  console.log(coords.top);
+  console.log(coords.left);
+  console.log(coords.width);
+  console.log(tool.offsetWidth);
   console.log(toolTop);
 });
 
@@ -42,7 +37,3 @@ house.addEventListener('mouseout', (event) => {
     tool = false;
   }
 });
-
-function createTool() {
-
-}
