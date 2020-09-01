@@ -1,0 +1,59 @@
+.fixed-container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.container {
+
+}
+
+.container__list {
+
+}
+
+.list {
+
+}
+
+.list__item {
+
+}
+
+.container__btn {
+  margin-top: 10px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 405px;
+}
+
+.button {
+  display: block;
+  width: 200px;
+  height: 50px;
+
+  background: transparent;
+
+  border: 1px solid blue;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  color: blue;
+
+  transition: background-color .5s, border-color .5s, color .5s;
+}
+
+.button:hover {
+  background: blue;
+
+  border-color: transparent;
+
+  color: white;
+
+  transition: background-color .5s, border-color .5s, color .5s;
+}
